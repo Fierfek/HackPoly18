@@ -5,9 +5,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
 
 	public float maxVelocity = 5;
-
+	public Camera playerCamera;
+	
 	Rigidbody2D rigidbody;
-	Vector2 moveDirection;
+	Vector2 moveDirection, lookDirection, mouseWorldPosition;
 
 	// Use this for initialization
 	void Start () {
@@ -18,11 +19,15 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		moveDirection.Set(Input.GetAxis("Horizontal")	, Input.GetAxis("Vertical"));
 
+		//Rotate to mouse
+		mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		lookDirection = (mouseWorldPosition - (Vector2)rigidbody.position).normalized;
+		transform.up = lookDirection;
 
+		moveDirection.Set(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+		//move
 		moveDirection = moveDirection.normalized;
-
 		rigidbody.MovePosition(rigidbody.position + moveDirection * maxVelocity * Time.fixedDeltaTime);
 	}
 }

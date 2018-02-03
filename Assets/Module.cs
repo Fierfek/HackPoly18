@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Module : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
+	public PolygonCollider2D collider;
+	protected float health;
+
+	protected void takaDamage(float amount) {
+
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	void OnTriggerEnter2D(Collider2D col) {
+
 	}
 }
