@@ -7,7 +7,7 @@ public class Module : MonoBehaviour {
 	public PolygonCollider2D collider;
 	protected float health;
 
-	protected void takaDamage(float amount) {
+	public void takaDamage(float amount) {
 
 	}
 
