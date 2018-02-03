@@ -18,7 +18,8 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		moveDirection.Set(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+		moveDirection.Set(Input.GetAxis("Horizontal")	, Input.GetAxis("Vertical"));
+
 
 		moveDirection = moveDirection.normalized;
 
