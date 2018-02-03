@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Module : MonoBehaviour {
 
-	public PolygonCollider2D collider;
+	public PolygonCollider2D modSpot;
 	protected float health;
 
-	protected void takaDamage(float amount) {
-
+	protected void TakeDamage(float amount) {
+        health = health - amount;
 	}
 
 	void OnTriggerEnter2D(Collider2D col) {
