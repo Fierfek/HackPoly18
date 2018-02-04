@@ -24,7 +24,7 @@ public class DeathZone : MonoBehaviour {
 
 		if(modules.Count > 0) {
 			foreach (Module m in modules) {
-				m.takaDamage(damageRate * Time.fixedDeltaTime);
+				m.TakeDamage(damageRate * Time.fixedDeltaTime);
 			}
 		}
 	}
