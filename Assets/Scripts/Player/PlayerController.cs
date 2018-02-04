@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour {
 	public float baseVelocity = 5, velocity = 0, angularVelocity = 160;
 	public Camera playerCamera;
 
+	Cockpit pilot;
+
 	ArrayList modules;
 	bool fire;
 
@@ -14,9 +16,11 @@ public class PlayerController : MonoBehaviour {
 	Vector2 moveDirection, lookDirection, mouseWorldPosition;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		rigidbody = GetComponent<Rigidbody2D>();
 		rigidbody.gravityScale = 0;
+
+		pilot.GetComponentInChildren<Cockpit>();
 
 		modules = new ArrayList();
 
@@ -50,7 +54,7 @@ public class PlayerController : MonoBehaviour {
 				if (m is Booster) {
 					Booster temp = (Booster)m;
 					velocity += temp.getBoost();
-				} else if ((m is Weapons) && fire) {
+				} else if ((m is Weapons) && Input.GetButton("Fire1")) {
 					Weapons temp = (Weapons)m;
 					temp.Fire();
 				}
@@ -59,10 +63,17 @@ public class PlayerController : MonoBehaviour {
 
 		moveDirection = moveDirection.normalized;
 		rigidbody.MovePosition(rigidbody.position + moveDirection * (baseVelocity + velocity) * Time.fixedDeltaTime);
+		velocity = 0;
 	}
 
 	public void addModule(Module mod) {
-		modules.Add(mod);
+		if(modules.Count < 6) {
+			modules.Add(mod);
+		}
+
+		if(mod is Cockpit) {
+			pilot = (Cockpit)mod;
+		}
 	}
 
 	public void destroyModule(Module mod) {

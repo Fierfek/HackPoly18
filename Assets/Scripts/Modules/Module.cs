@@ -5,11 +5,19 @@ using UnityEngine;
 public class Module : MonoBehaviour {
 
 	private PolygonCollider2D collider;
-	protected float health;
-	PlayerController player;
+	public float health;
+	private float initialHealth;
+	protected PlayerController player;
 
 	void Start() {
 		player = GetComponentInParent<PlayerController>();
+
+		initialHealth = health;
+
+		if(player != null) {
+			Debug.Log(this.gameObject.name);
+			player.addModule(this);
+		}
 	}
 
 	public void TakeDamage(float amount) {
@@ -18,6 +26,10 @@ public class Module : MonoBehaviour {
 		if(health < 1) {
 			Die();
 		}
+	}
+
+	public void SetArmorBonus(bool flag) {
+
 	}
 
 	protected void AttachToShip() {
