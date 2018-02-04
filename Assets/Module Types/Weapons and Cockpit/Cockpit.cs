@@ -12,6 +12,7 @@ public class Cockpit : Weapons {
 	public override void Fire() {
 		if (Time.time > lastFire + rateOfFire) {
 			GameObject bullet = Instantiate(bulletPrefab, transform.position + transform.forward, transform.rotation);
+			bullet.GetComponent<Projectile>().playerID = player.playerID;
 
 			Destroy(bullet, timeToDisappear);
 			lastFire = Time.time;

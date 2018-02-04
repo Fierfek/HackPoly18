@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Module : MonoBehaviour {
 
-	private PolygonCollider2D collider;
+	private BoxCollider2D collider;
 	public float health;
 	private float initialHealth;
 	protected ModuleManager player;
@@ -12,16 +12,21 @@ public class Module : MonoBehaviour {
 	void Start() {
 		player = GetComponentInParent<ModuleManager>();
 
+		if(this is Cockpit) {
+			gameObject.SetActive(true);
+		}
+
 		initialHealth = health;
 
 		if(player != null) {
-			Debug.Log(this.gameObject.name);
 			player.addModule(this);
 		}
 	}
 
 	public void TakeDamage(float amount) {
         health -= amount;
+
+		Debug.Log("hit");
 
 		if(health < 1) {
 			Die();
@@ -38,5 +43,9 @@ public class Module : MonoBehaviour {
 
 	protected void Die() {
 		player.destroyModule(this);
+	}
+
+	void OnTriggerEnter2D (Collider2D col) {
+
 	}
 }

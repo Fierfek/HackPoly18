@@ -21,8 +21,12 @@ public class Bullet : MonoBehaviour {
         bulletRigidbody.MovePosition(transform.position + transform.up * velocity * Time.fixedDeltaTime);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D col)
     {
-        
-    }
+		if(col.name.Equals("Model")) {
+			if (col.gameObject.GetComponentInParent<ModuleManager>().playerID != GetComponent<Projectile>().playerID) {
+				col.gameObject.GetComponentInParent<Module>().TakeDamage(bulletDamage);
+			}
+		}
+	}
 }
