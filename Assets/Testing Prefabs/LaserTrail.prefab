@@ -35,7 +35,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1664817300201742}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.07, y: -2.03, z: 0.88282686}
+  m_LocalPosition: {x: 3.3672695, y: -2.92643, z: 0.88282686}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -89,8 +89,8 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 5, y: 0, z: 0}
-  - {x: -14, y: 0, z: 1}
+  - {x: 0, y: -5, z: 0}
+  - {x: 0, y: 10, z: 1}
   m_Parameters:
     serializedVersion: 2
     widthMultiplier: 0.4
@@ -109,7 +109,7 @@ LineRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 1, g: 1, b: 1, a: 0.7882353}
-      key1: {r: 0, g: 0.28128803, b: 0.9485294, a: 1}
+      key1: {r: 1, g: 0.41960785, b: 0.050980393, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
