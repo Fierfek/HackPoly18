@@ -30,7 +30,8 @@ public class Cockpit : Weapons
         if(health <= 0)
         {
             Debug.Log("I am dead!!!");
-            // NOTE: Do Game Over Stuff Here
+			// NOTE: Do Game Over Stuff Here
+			player.Die();
         }
     }
 }
