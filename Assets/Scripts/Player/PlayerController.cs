@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour {
 
 	public float baseVelocity = 5, velocity, angularVelocity;
 	public Camera playerCamera;
+	public ModuleManage manager;
+	public float playerID;
 
 	Cockpit pilot;
 
@@ -20,9 +22,12 @@ public class PlayerController : MonoBehaviour {
 		rigidbody = GetComponent<Rigidbody2D>();
 		rigidbody.gravityScale = 0;
 
-		pilot.GetComponentInChildren<Cockpit>();
+		playerID = GetComponent<PhotonView>().viewID;
 
 		modules = new ArrayList();
+		if(manager == null) {
+			manager = GetComponent<ModuleManage>();
+		}
 
         playerCamera.transform.position = new Vector3(0, 0, -5);
 	}
@@ -67,16 +72,26 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	public void addModule(Module mod) {
-		if(modules.Count < 6) {
-			modules.Add(mod);
-		}
-
 		if(mod is Cockpit) {
 			pilot = (Cockpit)mod;
+			manager.Gather();
+			Debug.Log("Gather");
 		}
+
+		/*if (modules.Count < 6) {
+			Module temp = manager.Activate(mod);
+			if (manager.Activate(mod) != null) {
+				modules.Add(temp);
+			}
+
+			Debug.Log("Rest");
+		}*/
 	}
 
 	public void destroyModule(Module mod) {
-		modules.Remove(mod);
+		Module temp = manager.Remove(mod);
+		if (temp != null) {
+			modules.Remove(temp);
+		}
 	} 
 }

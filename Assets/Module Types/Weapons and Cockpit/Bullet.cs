@@ -21,8 +21,14 @@ public class Bullet : MonoBehaviour {
         bulletRigidbody.MovePosition(transform.position + transform.up * velocity * Time.fixedDeltaTime);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        
-    }
+    private void OnTriggerEnter2D(Collider2D col)
+    {	
+		if(col.tag.Equals("Player")) {
+			if (!(col.gameObject.GetComponentInParent<PlayerController>().playerID == GetComponent<Projectile>().playerID)) {
+				col.gameObject.GetComponent<Module>().TakeDamage(bulletDamage);
+			}
+		} else {
+			Destroy(this);
+		}
+	}
 }

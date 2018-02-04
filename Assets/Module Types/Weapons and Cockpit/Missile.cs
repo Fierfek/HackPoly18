@@ -8,6 +8,7 @@ public class Missile : MonoBehaviour {
     public Transform target;
     public float velocity = 5f;
     public float rotateSpeed = 200f;
+	public float missleDamage = 5f;
 
     private Rigidbody2D rb;
 	// Use this for initialization
@@ -26,5 +27,15 @@ public class Missile : MonoBehaviour {
         rb.angularVelocity = -rotateAmount * rotateSpeed;
 
         rb.velocity = transform.up * velocity;
+	}
+
+	private void OnTriggerEnter2D(Collider2D col) {
+		if (col.tag.Equals("Player")) {
+			if (!(col.gameObject.GetComponentInParent<PlayerController>().playerID == GetComponent<Projectile>().playerID)) {
+				col.gameObject.GetComponent<Module>().TakeDamage(missleDamage);
+			}
+		} else {
+			Destroy(this);
+		}
 	}
 }
