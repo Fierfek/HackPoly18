@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212802169581516484}
   - component: {fileID: 114999776623888674}
   - component: {fileID: 61785992056780360}
-  - component: {fileID: 50994652718840934}
+  - component: {fileID: 50487036300514464}
   m_Layer: 0
   m_Name: Green bullet
   m_TagString: Untagged
@@ -43,7 +43,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50994652718840934
+--- !u!50 &50487036300514464
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
@@ -57,7 +57,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -99,8 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f9829472f21e1a468b71170a9a9c9e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToDisappear: 4
   bulletDamage: 3
+  velocity: 13.78
 --- !u!212 &212802169581516484
 SpriteRenderer:
   m_ObjectHideFlags: 1
