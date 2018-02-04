@@ -49,12 +49,10 @@ public class ModuleManager : MonoBehaviour {
 			mod.transform.parent = transform;
 
 			switch (modules.Count) {
-				case 2:  mod.transform.localPosition = new Vector3(0, 1.2f, 0);  break;
-				case 3:	 mod.transform.localPosition = new Vector3(0, -.5f, 0); break;
-				case 4: mod.transform.localPosition = new Vector3(-.5f, -.7f, 0); break;
-				case 5: mod.transform.localPosition = new Vector3(-1, -.7f, 0); break;
-				case 6: mod.transform.localPosition = new Vector3(.5f, -.7f, 0); break;
-				case 7: mod.transform.localPosition = new Vector3(1f, -.7f, 0); break;
+				case 2: mod.transform.localPosition = new Vector3(-.5f, -.7f, 0); break;
+				case 3: mod.transform.localPosition = new Vector3(-1, -.7f, 0); break;
+				case 4: mod.transform.localPosition = new Vector3(.5f, -.7f, 0); break;
+				case 5:  mod.transform.localPosition = new Vector3(1f, -.7f, 0); break;
 			}
 
 			mod.transform.localRotation = Quaternion.Euler(0, 0, 0);
