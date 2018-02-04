@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PhotonNetworkManager : MonoBehaviour
 {
+    public byte maxplayers = 2;
     [SerializeField] private Text connectText;
     [SerializeField] private GameObject player;
     [SerializeField] private Transform spawnPoint;
@@ -21,7 +22,7 @@ public class PhotonNetworkManager : MonoBehaviour
         Debug.Log("We should now be in the lobby");
 
         RoomOptions roomOptions = new RoomOptions();
-        roomOptions.MaxPlayers = 2;
+        roomOptions.MaxPlayers = maxplayers;
 
         // Join a room if it exists, or create one
         PhotonNetwork.JoinOrCreateRoom("NewLobby", roomOptions, null);
