@@ -45,13 +45,12 @@ public class Laser : Weapons {
     {
        
         Vector2 mousePosition = (Vector2) Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //Vector2 positionOnScreen = Camera.main.WorldToViewportPoint(transform.position);
+
         Vector2 playerPosition = new Vector2(transform.position.x, transform.position.y);
         RaycastHit2D hit = Physics2D.Raycast(playerPosition, mousePosition - playerPosition, laserRange, whatToHit);
 
         Debug.DrawLine(playerPosition, mousePosition, Color.green);
-        //float angle = AngleBetweenTwoPoints(positionOnScreen, mousePosition);
-//transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, angle));
+
         Effect();
 
         if(hit.collider != null)
