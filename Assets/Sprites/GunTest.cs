@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ballistics : Weapons {
+public class GunTest : MonoBehaviour {
+
 
     public float rateOfFire = .2f;
     public float timeToDisappear = .5f;
     public float nextFire;
+
     public GameObject bulletPrefab;
 
     // Use this for initialization
@@ -31,6 +33,8 @@ public class Ballistics : Weapons {
     void Shoot()
     {
         GameObject bullet = (GameObject)Instantiate(bulletPrefab, transform.position + transform.forward, Quaternion.identity);
+
+        
 
         Destroy(bullet, timeToDisappear);
     }

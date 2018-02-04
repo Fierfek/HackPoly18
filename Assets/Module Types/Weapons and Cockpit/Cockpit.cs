@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Cockpit : Weapons {
 
-
-    public float damageAmount = 1f;
+    public float bulletVelocity = 3f;
     public float rateOfFire;
+    public float timeToDisappear = 4f;
     public GameObject bulletPrefab;
+    public Transform bulletSpawn;
 
     // Use this for initialization
     void Start()
@@ -27,5 +28,12 @@ public class Cockpit : Weapons {
 
     }
 
+    void Shoot()
+    {
+        var bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
 
+        bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.forward * bulletVelocity;
+
+        Destroy(bullet, timeToDisappear);
+    }
 }
