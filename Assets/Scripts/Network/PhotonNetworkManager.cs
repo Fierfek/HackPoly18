@@ -31,7 +31,7 @@ public class PhotonNetworkManager : MonoBehaviour
     public virtual void OnJoinedRoom()
     {
         // Spawn in the player
-        PhotonNetwork.Instantiate(player.name, spawnPoint.position, spawnPoint.rotation, 0);
+        PhotonNetwork.Instantiate(player.name, spawnPoint.position + new Vector3(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f), 0), spawnPoint.rotation, 0);
         // Deactivate the lobby camera
         lobbyCamera.SetActive(false);
     }

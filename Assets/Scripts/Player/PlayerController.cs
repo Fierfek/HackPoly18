@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour {
 
 		modules = new ArrayList();
 
-        playerCamera.transform.position = new Vector3(0, 0, -5);
+        playerCamera.transform.localPosition = new Vector3(0, 0, -5);
 	}
 	
 	// Update is called once per frame
