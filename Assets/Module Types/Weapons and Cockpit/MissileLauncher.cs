@@ -24,7 +24,7 @@ public class MissileLauncher : Weapons {
 
         if (Input.GetButton("Fire1") && Time.time > nextFire)
         {
-            nextFire = Time.time + rateOfFire;
+            nextFire = Time.time + 1/rateOfFire;
             Shoot();
         }
 
