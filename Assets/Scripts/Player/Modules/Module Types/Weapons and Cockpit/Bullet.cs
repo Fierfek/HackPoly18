@@ -26,8 +26,10 @@ public class Bullet : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D col)
     {
 		if(col.name.Equals("Model")) {
-			if (col.gameObject.GetComponentInParent<ModuleManager>().playerID != GetComponent<Projectile>().playerID) {
-				col.gameObject.GetComponentInParent<Module>().TakeDamage(bulletDamage);
+			if(col.transform.parent.parent != null) {
+				if (col.gameObject.GetComponentInParent<ModuleManager>().playerID != GetComponent<Projectile>().playerID) {
+					col.gameObject.GetComponentInParent<Module>().TakeDamage(bulletDamage);
+				}
 			}
 		}
 	}

@@ -46,12 +46,10 @@ public class Module : MonoBehaviour {
 
 	protected void Die() {
 		player.destroyModule(this);
-		Destroy(this);
 	}
 
 	void OnTriggerEnter2D (Collider2D col) {
 		if (col.name.Equals("Model")) {
-			Debug.Log(this.gameObject.name);
 			Destroy(GetComponent<Rigidbody2D>());
 			col.gameObject.GetComponentInParent<Module>().AttachToShip(this);
 		}
