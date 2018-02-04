@@ -4,13 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-	public float baseVelocity = 5, velocity = 0, angularVelocity = 90;
+	public float baseVelocity = 5, boostVelocity = 0, angularVelocity = 90;
 	public Camera playerCamera;
-
-	Cockpit pilot;
-
-	ArrayList modules;
-	bool fire;
 
 	Rigidbody2D rigidbody;
 	Vector2 moveDirection, lookDirection, mouseWorldPosition;
@@ -19,8 +14,6 @@ public class PlayerController : MonoBehaviour {
 	void Awake () {
 		rigidbody = GetComponent<Rigidbody2D>();
 		rigidbody.gravityScale = 0;
-
-		modules = new ArrayList();
 
         playerCamera.transform.localPosition = new Vector3(0, 0, -5);
 	}
@@ -47,34 +40,8 @@ public class PlayerController : MonoBehaviour {
 		//move
 		moveDirection.Set(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
-		if (modules.Count > 0) {
-			foreach (Module m in modules) {
-				if (m is Booster) {
-					Booster temp = (Booster)m;
-					velocity += temp.getBoost();
-				} else if ((m is Weapons) && Input.GetButton("Fire1")) {
-					Weapons temp = (Weapons)m;
-					temp.Fire();
-				}
-			}
-		}
-
 		moveDirection = moveDirection.normalized;
-		rigidbody.MovePosition(rigidbody.position + moveDirection * (baseVelocity + velocity) * Time.fixedDeltaTime);
-		velocity = 0;
+		rigidbody.MovePosition(rigidbody.position + moveDirection * (baseVelocity + boostVelocity) * Time.fixedDeltaTime);
+		boostVelocity = 0;
 	}
-
-	public void addModule(Module mod) {
-		if(modules.Count < 6) {
-			modules.Add(mod);
-		}
-
-		if(mod is Cockpit) {
-			pilot = (Cockpit)mod;
-		}
-	}
-
-	public void destroyModule(Module mod) {
-		modules.Remove(mod);
-	} 
 }

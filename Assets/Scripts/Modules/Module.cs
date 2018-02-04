@@ -7,10 +7,10 @@ public class Module : MonoBehaviour {
 	private PolygonCollider2D collider;
 	public float health;
 	private float initialHealth;
-	protected PlayerController player;
+	protected ModuleManager player;
 
 	void Start() {
-		player = GetComponentInParent<PlayerController>();
+		player = GetComponentInParent<ModuleManager>();
 
 		initialHealth = health;
 
