@@ -27,4 +27,17 @@ public class CombatMusicControl : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    void ChangeMusic(int musicChange)
+    {
+        if(musicChange == 1)
+        {
+            Opening.TransitionTo(m_TransitionIn);
+        }
+
+        if(musicChange == 2)
+        {
+            Battle.TransitionTo(m_TransitionOut);
+        }
+    }
 }
