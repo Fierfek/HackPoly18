@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: b32aaf1b1de0dae41817c05d288d7326
+timeCreated: 1517729944
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Starlord
+  fontNames:
+  - Starlord
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 120ae45003ba7844da01cb81f2d10716, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
