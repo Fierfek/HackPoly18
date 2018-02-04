@@ -7,32 +7,14 @@ public class Cockpit : Weapons {
     public float rateOfFire = .2f;
     public float timeToDisappear = .5f;
     public GameObject bulletPrefab;
-    float nextFire;
+	private float lastFire = 0;
 
-    // Use this for initialization
-    void Start()
-    {
+	public override void Fire() {
+		if (Time.time > lastFire + rateOfFire) {
+			GameObject bullet = Instantiate(bulletPrefab, transform.position + transform.forward, transform.rotation);
 
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-
-        if (Input.GetButton("Fire1") && Time.time > nextFire)
-        {
-            nextFire = Time.time + rateOfFire;
-            Shoot();
-        }
-
-    }
-
-    void Shoot()
-    {
-        GameObject bullet = (GameObject)Instantiate(bulletPrefab, transform.position + transform.forward, Quaternion.identity);
-
-        Destroy(bullet, timeToDisappear);
-    }
+			Destroy(bullet, timeToDisappear);
+			lastFire = Time.time;
+		}
+	}
 }
