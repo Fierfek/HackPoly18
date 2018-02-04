@@ -120,49 +120,49 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4574400585953038, guid: 8d3164d3dfbdfdc46805ddd5473ea336, type: 2}
+    - target: {fileID: 4930529987011292, guid: 8d3164d3dfbdfdc46805ddd5473ea336, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4574400585953038, guid: 8d3164d3dfbdfdc46805ddd5473ea336, type: 2}
+    - target: {fileID: 4930529987011292, guid: 8d3164d3dfbdfdc46805ddd5473ea336, type: 2}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4574400585953038, guid: 8d3164d3dfbdfdc46805ddd5473ea336, type: 2}
+    - target: {fileID: 4930529987011292, guid: 8d3164d3dfbdfdc46805ddd5473ea336, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4574400585953038, guid: 8d3164d3dfbdfdc46805ddd5473ea336, type: 2}
+    - target: {fileID: 4930529987011292, guid: 8d3164d3dfbdfdc46805ddd5473ea336, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4574400585953038, guid: 8d3164d3dfbdfdc46805ddd5473ea336, type: 2}
+    - target: {fileID: 4930529987011292, guid: 8d3164d3dfbdfdc46805ddd5473ea336, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4574400585953038, guid: 8d3164d3dfbdfdc46805ddd5473ea336, type: 2}
+    - target: {fileID: 4930529987011292, guid: 8d3164d3dfbdfdc46805ddd5473ea336, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4574400585953038, guid: 8d3164d3dfbdfdc46805ddd5473ea336, type: 2}
+    - target: {fileID: 4930529987011292, guid: 8d3164d3dfbdfdc46805ddd5473ea336, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4574400585953038, guid: 8d3164d3dfbdfdc46805ddd5473ea336, type: 2}
+    - target: {fileID: 4930529987011292, guid: 8d3164d3dfbdfdc46805ddd5473ea336, type: 2}
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 114825105158799608, guid: 8d3164d3dfbdfdc46805ddd5473ea336,
+    - target: {fileID: 114380527074360820, guid: 8d3164d3dfbdfdc46805ddd5473ea336,
         type: 2}
       propertyPath: viewIdField
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114825105158799608, guid: 8d3164d3dfbdfdc46805ddd5473ea336,
+    - target: {fileID: 114380527074360820, guid: 8d3164d3dfbdfdc46805ddd5473ea336,
         type: 2}
       propertyPath: instantiationId
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1992369965039042, guid: 8d3164d3dfbdfdc46805ddd5473ea336, type: 2}
+    - target: {fileID: 1036399554723286, guid: 8d3164d3dfbdfdc46805ddd5473ea336, type: 2}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -298,8 +298,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   modules:
-  - {fileID: 1770369177327712, guid: cc4a095804408404f866d19f6747b061, type: 2}
-  - {fileID: 1318587288343188, guid: 1376a92b1e862b341b529d6604a43e6d, type: 2}
+  - {fileID: 1947473642929972, guid: 749aef804f2018b4db19c669c0075043, type: 2}
+  - {fileID: 1134292400338052, guid: 2701ac1608fe3dc44939232345432bd4, type: 2}
   spawnRange: 15
   maxModulesToSpawn: 20
 --- !u!4 &1121844577
@@ -391,7 +391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxplayers: 20
   connectText: {fileID: 700646068}
-  player: {fileID: 1992369965039042, guid: 8d3164d3dfbdfdc46805ddd5473ea336, type: 2}
+  player: {fileID: 1036399554723286, guid: 8d3164d3dfbdfdc46805ddd5473ea336, type: 2}
   spawnPoint: {fileID: 837211425}
   lobbyCamera: {fileID: 649165135}
 --- !u!4 &1720513886
