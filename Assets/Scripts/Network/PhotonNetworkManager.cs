@@ -12,7 +12,7 @@ public class PhotonNetworkManager : MonoBehaviour
     [SerializeField] private GameObject lobbyCamera;
 
     // Use this for initialization
-    private void Start () {
+    public void OnClick_ConnectToServer () {
         // Connect to Photon server
         PhotonNetwork.ConnectUsingSettings("0.1");
 	}
