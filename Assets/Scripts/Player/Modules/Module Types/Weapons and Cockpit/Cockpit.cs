@@ -32,4 +32,13 @@ public class Cockpit : Weapons
         GameObject bullet = PhotonNetwork.Instantiate(bulletPrefab.name, transform.position + transform.forward, transform.rotation, 0);
         bullet.GetComponent<Projectile>().playerID = moduleManager.playerID;
     }
+
+    public void LateUpdate()
+    {
+        if(health <= 0)
+        {
+            Debug.Log("I am dead!!!");
+            // NOTE: Do Game Over Stuff Here
+        }
+    }
 }

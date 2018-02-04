@@ -5,8 +5,10 @@ using UnityEngine;
 public class Module : MonoBehaviour {
 
 	private BoxCollider2D collider;
-	public float health;
-	private float initialHealth;
+
+    [SerializeField] private float initialHealth = 20;
+    public float health;
+
 	protected ModuleManager player;
 
 	void Start() {
@@ -28,7 +30,7 @@ public class Module : MonoBehaviour {
 
 		Debug.Log("hit");
 
-		if(health < 1) {
+		if(health <= 0) {
 			Die();
 		}
 	}
