@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-	public float baseVelocity = 5, velocity;
+	public float baseVelocity = 5, velocity, angularVelocity;
 	public Camera playerCamera;
 
 	ArrayList modules;
@@ -25,22 +25,32 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-
 		//Rotate to mouse
 		mouseWorldPosition = playerCamera.ScreenToWorldPoint(Input.mousePosition);
 		lookDirection = (mouseWorldPosition - (Vector2)rigidbody.position).normalized;
-		transform.up = lookDirection;
-        playerCamera.transform.rotation = Quaternion.Euler(0, 0, 0);
+		Vector2 forward = new Vector2(Mathf.Sin(-transform.rotation.eulerAngles.z * Mathf.Deg2Rad), Mathf.Cos(-transform.rotation.eulerAngles.z * Mathf.Deg2Rad));
 
-        //move
-        moveDirection.Set(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+		float delta = Vector2.SignedAngle(forward, lookDirection);
 
-		if(modules.Count > 0) {
-			foreach(Module m in modules) {
-				if(m is Booster) {
-					Booster temp = (Booster) m;
+		if(delta > 3) {
+			rigidbody.angularVelocity = angularVelocity;
+		} else if (delta < -3) {
+			rigidbody.angularVelocity = -angularVelocity;
+		} else {
+			transform.up = lookDirection;
+		}
+
+		playerCamera.transform.rotation = Quaternion.Euler(0, 0, 0);
+
+		//move
+		moveDirection.Set(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+
+		if (modules.Count > 0) {
+			foreach (Module m in modules) {
+				if (m is Booster) {
+					Booster temp = (Booster)m;
 					velocity += temp.getBoost();
-				} else if((m is Weapons) && fire) {
+				} else if ((m is Weapons) && fire) {
 					Weapons temp = (Weapons)m;
 					temp.Fire();
 				}

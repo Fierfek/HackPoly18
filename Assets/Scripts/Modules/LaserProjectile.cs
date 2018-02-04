@@ -7,14 +7,16 @@ public class LaserProjectile : MonoBehaviour {
 	public float damage, distance = 100;
 	bool done;
 
-	GameObject linePrefab;
+	public GameObject linePrefab;
+	GameObject lineObject;
 	RaycastHit2D hit;
-	public LineRenderer line;
+	LineRenderer line;
 
 	// Use this for initialization
 	void Start () {
 		done = false;
-		line = Instantiate(linePrefab).GetComponent<LineRenderer>();		
+		lineObject = Instantiate(linePrefab);
+		line = line.GetComponent<LineRenderer>();
 	}
 
 	void FixedUpdate() {
