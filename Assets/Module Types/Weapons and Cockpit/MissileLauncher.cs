@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunTest : MonoBehaviour {
+public class MissileLauncher : Weapons {
 
 
-    public float rateOfFire = .2f;
-    public float timeToDisappear = .5f;
-    public float nextFire;
-
-    public GameObject bulletPrefab;
+    public float damageAmount = 1f;
+    public float rateOfFire = .5f;
+    public float timeToDisappear = 3f;
+    float nextFire;
+    public GameObject missilePrefab;
 
     // Use this for initialization
     void Start()
@@ -32,9 +32,7 @@ public class GunTest : MonoBehaviour {
 
     void Shoot()
     {
-        GameObject bullet = (GameObject)Instantiate(bulletPrefab, transform.position + transform.forward, Quaternion.identity);
-
-        
+        GameObject bullet = (GameObject)Instantiate(missilePrefab, transform.position + transform.forward, Quaternion.identity);
 
         Destroy(bullet, timeToDisappear);
     }

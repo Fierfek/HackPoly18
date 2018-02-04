@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ballistics : Weapons {
+public class GunTest : MonoBehaviour {
+
 
     public float rateOfFire = .2f;
     public float timeToDisappear = .5f;
-    float nextFire;
+    public float nextFire;
+
     public GameObject bulletPrefab;
 
     // Use this for initialization
