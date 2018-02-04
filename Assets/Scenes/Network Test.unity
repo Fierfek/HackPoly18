@@ -162,6 +162,10 @@ Prefab:
       propertyPath: instantiationId
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1036399554723286, guid: 8d3164d3dfbdfdc46805ddd5473ea336, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8d3164d3dfbdfdc46805ddd5473ea336, type: 2}
   m_IsPrefabParent: 0
@@ -294,8 +298,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   modules:
-  - {fileID: 1770369177327712, guid: cc4a095804408404f866d19f6747b061, type: 2}
-  - {fileID: 1318587288343188, guid: 1376a92b1e862b341b529d6604a43e6d, type: 2}
+  - {fileID: 1947473642929972, guid: 749aef804f2018b4db19c669c0075043, type: 2}
+  - {fileID: 1134292400338052, guid: 2701ac1608fe3dc44939232345432bd4, type: 2}
   spawnRange: 15
   maxModulesToSpawn: 20
 --- !u!4 &1121844577
