@@ -9,12 +9,13 @@ public class Weapons : Module {
     public float rateOfFire;
     public enum WeaponType { Type1, Type2, Type3};
     public WeaponType BoomType;
+    public GameObject projectile1, projectile2, projectile3;
 
 
 	// Use this for initialization
 	void Start () {
         health = healthAmount;
-        
+
 	}
 	
 	// Update is called once per frame
@@ -25,7 +26,7 @@ public class Weapons : Module {
             //Destroy Module and create empty space
         }
         //if button is hit
-        if (Input.GetButtonDown("Space"))
+        if (Input.GetButtonDown("Fire Button"))
         {
             Fire();
         }
@@ -33,6 +34,20 @@ public class Weapons : Module {
 
     void Fire()
     {
-        //Blam Blam!
+        //Instantiate(projectile, transform.position);
+        //Blam Blam with BoomType
+        if(BoomType == WeaponType.Type1)
+        {
+            //Shoot projectile 1 Ballistics
+        }
+        else if (BoomType == WeaponType.Type2)
+        {
+            //Shoot projectile 2 Lasers
+        }
+        else if (BoomType == WeaponType.Type3)
+        {
+            //Shoot projectile 3 Missiles
+        }
+
     }
 }

@@ -20,7 +20,7 @@ public class Booster : Module {
         {
             //Destroy Module and create empty space
         }
-        //adds to 
+        //adds to maximum speed.
         
     }
 }

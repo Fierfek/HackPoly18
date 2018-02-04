@@ -8,7 +8,7 @@ public class Module : MonoBehaviour {
 	protected float health;
 
 	protected void TakeDamage(float amount) {
-        health = health - amount;
+        health -= amount;
 	}
 
 	void OnTriggerEnter2D(Collider2D col) {

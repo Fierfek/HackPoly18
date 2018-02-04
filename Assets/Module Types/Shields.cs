@@ -11,6 +11,7 @@ public class Shields : Module {
     public float rechargeRate;
     public int damageCooldown;
     bool wasDamaged = false;
+    public Weapons.WeaponType weakness;
     
  
 
@@ -30,7 +31,8 @@ public class Shields : Module {
 
         if(wasDamaged == false && shieldAmount < shieldCapacity)
         {
-            wasDamaged = true;
+
+            RechargeShield(rechargeRate);
         }
 
         if (wasDamaged)
@@ -46,8 +48,15 @@ public class Shields : Module {
 
 	}
 
-    void RechargeShield()
+    void RechargeShield(float chargeAmount)
     {
-
+        if(shieldAmount < shieldCapacity)
+        {
+            shieldAmount += rechargeRate;
+        }
+        
     }
+
+    //if projectile equals weakness type, full damage
+    //else half damage
 }
