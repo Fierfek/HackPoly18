@@ -8,13 +8,6 @@ public class Cockpit : Weapons
     public GameObject bulletPrefab;
     private float lastFire = 0;
 
-    private ModuleManager moduleManager;
-
-    private void Awake()
-    {
-        moduleManager = GetComponentInParent<ModuleManager>();
-    }
-
 
     public override void Fire_Trigger()
     {
@@ -29,7 +22,7 @@ public class Cockpit : Weapons
     public void Fire()
     {
         GameObject bullet = PhotonNetwork.Instantiate(bulletPrefab.name, transform.position + transform.forward, transform.rotation, 0);
-        bullet.GetComponent<Projectile>().playerID = moduleManager.playerID;
+        bullet.GetComponent<Projectile>().playerID = player.playerID;
     }
 
     public void LateUpdate()
