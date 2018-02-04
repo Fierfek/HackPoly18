@@ -519,6 +519,7 @@ MonoBehaviour:
   playerCamera: {fileID: 1827617199550616}
   playerControlScripts:
   - {fileID: 114293519260964862}
+  - {fileID: 114974983948734746}
 --- !u!114 &114974983948734746
 MonoBehaviour:
   m_ObjectHideFlags: 1
