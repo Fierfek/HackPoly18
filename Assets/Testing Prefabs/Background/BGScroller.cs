@@ -5,7 +5,7 @@ using UnityEngine;
 public class BGScroller : MonoBehaviour {
 
     public float scrollSpeed;
-    public float tileSizeZ;
+    public float tileSizeX = 25f;
 
     Vector2 startPosition;
 
@@ -16,7 +16,7 @@ public class BGScroller : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        float newPosition = Mathf.Repeat(Time.time * scrollSpeed, tileSizeZ);
+        float newPosition = Mathf.Repeat(Time.time * scrollSpeed, tileSizeX);
         transform.position = startPosition + Vector2.left * newPosition;
 	}
 }
