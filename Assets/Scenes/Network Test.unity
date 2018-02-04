@@ -359,7 +359,13 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1720513885}
-    m_RemovedComponents: []
+    - target: {fileID: 1324277817646428, guid: 8410c40ce634fe74f98b5a2d1c5b82cf, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 82461427165945296, guid: 8410c40ce634fe74f98b5a2d1c5b82cf, type: 2}
+    - {fileID: 82994247999192060, guid: 8410c40ce634fe74f98b5a2d1c5b82cf, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 8410c40ce634fe74f98b5a2d1c5b82cf, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1720513884
@@ -371,6 +377,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1720513886}
   - component: {fileID: 1720513885}
+  - component: {fileID: 1720513887}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -409,6 +416,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &1720513887
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1720513884}
+  m_Enabled: 1
 --- !u!1 &1841972119
 GameObject:
   m_ObjectHideFlags: 0

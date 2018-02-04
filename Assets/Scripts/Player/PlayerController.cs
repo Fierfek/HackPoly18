@@ -17,9 +17,14 @@ public class PlayerController : MonoBehaviour {
 
         playerCamera.transform.localPosition = new Vector3(0, 0, -5);
 	}
-	
-	// Update is called once per frame
-	void FixedUpdate () {
+
+    private void Update()
+    {
+        playerCamera.transform.rotation = Quaternion.Euler(0, 0, 0);
+    }
+
+    // Update is called once per frame
+    void FixedUpdate () {
 		//Rotate to mouse
 		mouseWorldPosition = playerCamera.ScreenToWorldPoint(Input.mousePosition);
 		lookDirection = (mouseWorldPosition - (Vector2)rigidbody.position).normalized;
@@ -34,8 +39,6 @@ public class PlayerController : MonoBehaviour {
 		} else {
 			transform.up = lookDirection;
 		}
-
-		playerCamera.transform.rotation = Quaternion.Euler(0, 0, 0);
 
 		//move
 		moveDirection.Set(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
