@@ -43,9 +43,6 @@ public class ModuleManager : MonoBehaviour {
         if (modules.Count < 6)
         {
             modules.Add(mod);
-
-			Debug.Log(modules.Count);
-
 			mod.transform.parent = transform;
 
 			switch (modules.Count) {
@@ -57,9 +54,6 @@ public class ModuleManager : MonoBehaviour {
 
 			mod.transform.localRotation = Quaternion.Euler(0, 0, 0);
 			mod.transform.GetChild(0).transform.localScale = new Vector3(.25f, .25f, 0);
-
-			Debug.Log("Yo : " + mod.transform.parent);
-
 			
         }
 
