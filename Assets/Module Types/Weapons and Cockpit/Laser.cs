@@ -4,28 +4,24 @@ using UnityEngine;
 
 public class Laser : Weapons {
 
-
-    public float damageAmount = 1f;
-    public float rateOfFire;
+	public float rateOfFire;
+	private float lastFire;
     public GameObject laserPrefab;
+	private GameObject laser;
 
-    // Use this for initialization
-    void Start()
-    {
+	// Use this for initialization
+	void Start() {
+		lastFire = 0;
+	}
 
+	public override void Fire() {
+		base.Fire();
+		if(Time.time + rateOfFire > lastFire) {
+			lastFire = Time.time;
+			laser = Instantiate(laserPrefab);
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-        if (health <= 0)
-        {
-            //Destroy Module and create empty space
-        }
-
-    }
-
- 
+			laser.transform.position = transform.position;
+			laser.transform.rotation = transform.rotation;
+		}
+	}
 }
