@@ -26,7 +26,6 @@ public class Cockpit : Weapons
         }
     }
 
-
     public void Fire()
     {
         GameObject bullet = PhotonNetwork.Instantiate(bulletPrefab.name, transform.position + transform.forward, transform.rotation, 0);

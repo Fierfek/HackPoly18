@@ -5,19 +5,29 @@ using UnityEngine;
 public class Ballistics : Weapons {
 
     public float rateOfFire = .2f;
-    public float timeToDisappear = 5f;
-	private float lastFire = 0;
-    float nextFire;
     public GameObject bulletPrefab;
+    private float lastFire = 0;
 
-	public void Fire()
+    private ModuleManager moduleManager;
+
+    private void Awake()
     {
-		if(Time.time > lastFire + rateOfFire) {
-			GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
-			bullet.GetComponent<Projectile>().playerID = player.playerID;
-			//Destroy(bullet, timeToDisappear);
+        moduleManager = GetComponentInParent<ModuleManager>();
+    }
 
-			lastFire = Time.time;
-		}
+    public override void Fire_Trigger()
+    {
+        if (Time.time > lastFire + rateOfFire)
+        {
+            Fire();
+
+            lastFire = Time.time;
+        }
+    }
+
+    public void Fire()
+    {
+        GameObject bullet = PhotonNetwork.Instantiate(bulletPrefab.name, transform.position + transform.forward, transform.rotation, 0);
+        bullet.GetComponent<Projectile>().playerID = moduleManager.playerID;
     }
 }
