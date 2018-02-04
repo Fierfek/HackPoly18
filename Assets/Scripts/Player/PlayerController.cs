@@ -16,10 +16,11 @@ public class PlayerController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rigidbody = GetComponent<Rigidbody2D>();
-
 		rigidbody.gravityScale = 0;
 
 		modules = new ArrayList();
+
+        playerCamera.transform.position = new Vector3(0, 0, -5);
 	}
 	
 	// Update is called once per frame
@@ -29,7 +30,7 @@ public class PlayerController : MonoBehaviour {
 		mouseWorldPosition = playerCamera.ScreenToWorldPoint(Input.mousePosition);
 		lookDirection = (mouseWorldPosition - (Vector2)rigidbody.position).normalized;
 		transform.up = lookDirection;
-        mouseWorldPosition = playerCamera.ScreenToWorldPoint(Input.mousePosition);
+        playerCamera.transform.rotation = Quaternion.Euler(0, 0, 0);
 
         //move
         moveDirection.Set(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
