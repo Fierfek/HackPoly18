@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour {
 	public Camera playerCamera;
 
 	ArrayList modules;
+	bool fire;
 
 	Rigidbody2D rigidbody;
 	Vector2 moveDirection, lookDirection, mouseWorldPosition;
@@ -38,6 +39,9 @@ public class PlayerController : MonoBehaviour {
 				if(m is Booster) {
 					Booster temp = (Booster) m;
 					velocity += temp.getBoost();
+				} else if((m is Weapons) && fire) {
+					Weapons temp = (Weapons)m;
+					temp.Fire();
 				}
 			}
 		}
