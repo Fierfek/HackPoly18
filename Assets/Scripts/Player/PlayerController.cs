@@ -21,11 +21,12 @@ public class PlayerController : MonoBehaviour {
 	void FixedUpdate () {
 
 		//Rotate to mouse
-		mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+		mouseWorldPosition = playerCamera.ScreenToWorldPoint(Input.mousePosition);
 		lookDirection = (mouseWorldPosition - (Vector2)rigidbody.position).normalized;
 		transform.up = lookDirection;
+        playerCamera.transform.rotation = Quaternion.Euler(0, 0, 0);
 
-		moveDirection.Set(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        moveDirection.Set(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 		//move
 		moveDirection = moveDirection.normalized;
 		rigidbody.MovePosition(rigidbody.position + moveDirection * maxVelocity * Time.fixedDeltaTime);
