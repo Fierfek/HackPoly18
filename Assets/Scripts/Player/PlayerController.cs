@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
@@ -46,5 +47,10 @@ public class PlayerController : MonoBehaviour {
 		moveDirection = moveDirection.normalized;
 		rigidbody.MovePosition(rigidbody.position + moveDirection * (baseVelocity + boostVelocity) * Time.fixedDeltaTime);
 		boostVelocity = 0;
+	}
+
+	public void Die() {
+		Destroy(this.gameObject);
+		SceneManager.LoadScene("GameOver");
 	}
 }

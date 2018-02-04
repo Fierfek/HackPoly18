@@ -63,6 +63,10 @@ public class ModuleManager : MonoBehaviour {
         }
     }
 
+	public void Die() {
+		playerController.Die();
+	}
+
     public void destroyModule(Module mod)
     {
         modules.Remove(mod);
