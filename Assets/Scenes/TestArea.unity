@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rateOfFire: 0.39
-  timeToDisappear: 4.09
+  timeToDisappear: 2.9
   nextFire: 0
   bulletPrefab: {fileID: 1136297132074414, guid: 535b4dda32aaa984e8c69b63b8cac8c0,
     type: 2}
