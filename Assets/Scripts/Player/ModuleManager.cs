@@ -8,7 +8,7 @@ public class ModuleManager : MonoBehaviour {
     Cockpit pilot;
     PlayerController playerController;
 
-	public int playerID;
+    public int playerID;
 
     private void Awake()
     {
@@ -32,7 +32,7 @@ public class ModuleManager : MonoBehaviour {
                 else if ((m is Weapons) && Input.GetButton("Fire1"))
                 {
                     Weapons temp = (Weapons)m;
-                    temp.Fire();
+                    temp.Fire_Trigger();
                 }
             }
         }
