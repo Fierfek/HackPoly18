@@ -19,7 +19,6 @@ public class Bullet : MonoBehaviour {
     void FixedUpdate()
     {
         bulletRigidbody.MovePosition(transform.position + transform.up * velocity * Time.fixedDeltaTime);
-        Debug.Log("Running");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
