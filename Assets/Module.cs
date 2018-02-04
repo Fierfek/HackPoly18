@@ -6,12 +6,25 @@ public class Module : MonoBehaviour {
 
 	public PolygonCollider2D modSpot;
 	protected float health;
+	PlayerController player;
 
-	protected void TakeDamage(float amount) {
-        health -= amount;
+	void Start() {
+		player = GetComponentInParent<PlayerController>();
 	}
 
-	void OnTriggerEnter2D(Collider2D col) {
+	public void TakeDamage(float amount) {
+        health -= amount;
 
+		if(health < 1) {
+			Die();
+		}
+	}
+
+	protected void AttachToShip() {
+		player.addModule(this);
+	}
+
+	protected void Die() {
+		player.destroyModule(this);
 	}
 }
