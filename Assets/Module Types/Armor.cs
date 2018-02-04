@@ -7,8 +7,7 @@ public class Armor: Module {
 
     public float armorAmount;
 
-	// Use this for initialization
-	void Start () {
-        health = armorAmount;
+	public float getArmor() {
+		return armorAmount;
 	}
 }
