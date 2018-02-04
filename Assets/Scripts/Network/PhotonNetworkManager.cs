@@ -9,7 +9,7 @@ public class PhotonNetworkManager : MonoBehaviour
     [SerializeField] private Text connectText;
     [SerializeField] private GameObject player;
     [SerializeField] private Transform spawnPoint;
-    [SerializeField] private GameObject lobbyCamera;
+    [SerializeField] private GameObject lobbyMenu;
 
     // Use this for initialization
     public void OnClick_ConnectToServer () {
@@ -33,12 +33,12 @@ public class PhotonNetworkManager : MonoBehaviour
         // Spawn in the player
         PhotonNetwork.Instantiate(player.name, spawnPoint.position + new Vector3(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f), 0), spawnPoint.rotation, 0);
         // Deactivate the lobby camera
-        lobbyCamera.SetActive(false);
+        lobbyMenu.SetActive(false);
     }
 	
 	// Update is called once per frame
 	private void Update () {
         // NOTE: FOR TESTING ONLY
-        connectText.text = PhotonNetwork.connectionStateDetailed.ToString();
+        connectText.text = PhotonNetwork.connectionStateDetailed.ToString() + ". . .";
 	}
 }
