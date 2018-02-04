@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 4978785492133532}
   - component: {fileID: 114550597505868610}
   - component: {fileID: 114655519209356136}
+  - component: {fileID: 50200199954909724}
   m_Layer: 0
   m_Name: Ballistics
   m_TagString: Untagged
@@ -72,6 +73,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50200199954909724
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1947473642929972}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &61002574930833596
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -108,9 +129,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b33a6a073dd3f0745a607262ff4d1972, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialHealth: 20
   health: 10
   rateOfFire: 0.2
-  timeToDisappear: 0.5
   bulletPrefab: {fileID: 1136297132074414, guid: 535b4dda32aaa984e8c69b63b8cac8c0,
     type: 2}
 --- !u!114 &114655519209356136
