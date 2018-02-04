@@ -138,7 +138,6 @@ GameObject:
   - component: {fileID: 114473307550609192}
   - component: {fileID: 114073828275332656}
   - component: {fileID: 114825105158799608}
-  - component: {fileID: 114799736336769676}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -426,6 +425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a209b9200117f3749a0481b8b49f48ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialHealth: 20
   health: 10
   damageAmount: 1
   rateOfFire: 0.5
@@ -473,6 +473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b33a6a073dd3f0745a607262ff4d1972, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialHealth: 20
   health: 10
   rateOfFire: 0.2
   timeToDisappear: 0.5
@@ -489,23 +490,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9870652c24d5059429ced887b1c18e99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialHealth: 20
   health: 10
   boostAmount: 2
---- !u!114 &114799736336769676
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1992369965039042}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63bd05e16c77bc443ab153860ac59012, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 0
-  rateOfFire: 0.2
-  bulletPrefab: {fileID: 1136297132074414, guid: 535b4dda32aaa984e8c69b63b8cac8c0,
-    type: 2}
 --- !u!114 &114825105158799608
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -527,7 +514,7 @@ MonoBehaviour:
   ownershipTransfer: 0
   ObservedComponents:
   - {fileID: 114073828275332656}
-  - {fileID: 114799736336769676}
+  - {fileID: 0}
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 0
   instantiationId: -1
@@ -544,7 +531,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80bd977a666b47b40bb7136bcbee55c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  initialHealth: 20
+  health: 20
   rateOfFire: 0.2
   bulletPrefab: {fileID: 1136297132074414, guid: 535b4dda32aaa984e8c69b63b8cac8c0,
     type: 2}
