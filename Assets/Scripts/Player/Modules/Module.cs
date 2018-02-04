@@ -46,6 +46,7 @@ public class Module : MonoBehaviour {
 
 	protected void Die() {
 		player.destroyModule(this);
+		Destroy(this);
 	}
 
 	void OnTriggerEnter2D (Collider2D col) {
