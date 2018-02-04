@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class Cockpit : Weapons {
 
-    public float bulletVelocity = 3f;
-    public float rateOfFire;
-    public float timeToDisappear = 4f;
+    public float rateOfFire = .2f;
+    public float timeToDisappear = .5f;
     public GameObject bulletPrefab;
-    public Transform bulletSpawn;
+    float nextFire;
 
     // Use this for initialization
     void Start()
@@ -21,18 +20,18 @@ public class Cockpit : Weapons {
     void Update()
     {
 
-        if (health <= 0)
+
+        if (Input.GetButton("Fire1") && Time.time > nextFire)
         {
-            //Destroy Module and create empty space
+            nextFire = Time.time + rateOfFire;
+            Shoot();
         }
 
     }
 
     void Shoot()
     {
-        var bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawn.position, Quaternion.identity);
-
-        bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.forward * bulletVelocity;
+        GameObject bullet = (GameObject)Instantiate(bulletPrefab, transform.position + transform.forward, Quaternion.identity);
 
         Destroy(bullet, timeToDisappear);
     }
