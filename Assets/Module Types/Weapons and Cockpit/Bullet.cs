@@ -22,13 +22,11 @@ public class Bullet : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D col)
-    {	
-		if(col.tag.Equals("Player")) {
-			if (!(col.gameObject.GetComponentInParent<PlayerController>().playerID == GetComponent<Projectile>().playerID)) {
-				col.gameObject.GetComponent<Module>().TakeDamage(bulletDamage);
+    {
+		if(col.name.Equals("Model")) {
+			if (col.gameObject.GetComponentInParent<ModuleManager>().playerID != GetComponent<Projectile>().playerID) {
+				col.gameObject.GetComponentInParent<Module>().TakeDamage(bulletDamage);
 			}
-		} else {
-			Destroy(this);
 		}
 	}
 }

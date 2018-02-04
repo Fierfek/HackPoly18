@@ -31,7 +31,7 @@ public class Missile : MonoBehaviour {
 
 	private void OnTriggerEnter2D(Collider2D col) {
 		if (col.tag.Equals("Player")) {
-			if (!(col.gameObject.GetComponentInParent<PlayerController>().playerID == GetComponent<Projectile>().playerID)) {
+			if (!(col.gameObject.GetComponentInParent<ModuleManager>().playerID == GetComponent<Projectile>().playerID)) {
 				col.gameObject.GetComponent<Module>().TakeDamage(missleDamage);
 			}
 		} else {

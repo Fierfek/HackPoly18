@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ballistics : Weapons {
 
     public float rateOfFire = .2f;
-    public float timeToDisappear = .5f;
+    public float timeToDisappear = 5f;
 	private float lastFire = 0;
     float nextFire;
     public GameObject bulletPrefab;
@@ -14,8 +14,8 @@ public class Ballistics : Weapons {
     {
 		if(Time.time > lastFire + rateOfFire) {
 			GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
-
-			Destroy(bullet, timeToDisappear);
+			bullet.GetComponent<Projectile>().playerID = player.playerID;
+			//Destroy(bullet, timeToDisappear);
 
 			lastFire = Time.time;
 		}

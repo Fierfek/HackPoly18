@@ -8,10 +8,14 @@ public class ModuleManager : MonoBehaviour {
     Cockpit pilot;
     PlayerController playerController;
 
+	public int playerID;
+
     private void Awake()
     {
         playerController = GetComponent<PlayerController>();
         modules = new ArrayList();
+
+		playerID = GetComponent<PhotonView>().viewID;
     }
 
     // Use this for initialization
