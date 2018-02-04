@@ -11,7 +11,7 @@ public class Shields : Module {
     public float rechargeRate;
     public int damageCooldown;
     bool wasDamaged = false;
-    public Weapons.WeaponType weakness;
+
     
  
 

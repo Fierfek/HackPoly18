@@ -6,7 +6,6 @@ public class Booster : Module {
 
     public float healthAmount;
     public float boostAmount;
-    public float boostMax;
 
 
 	// Use this for initialization
