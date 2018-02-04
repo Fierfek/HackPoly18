@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-	public float baseVelocity = 5, velocity = 0, angularVelocity = 160;
+	public float baseVelocity = 5, velocity = 0, angularVelocity = 90;
 	public Camera playerCamera;
 
 	Cockpit pilot;
@@ -19,8 +19,6 @@ public class PlayerController : MonoBehaviour {
 	void Awake () {
 		rigidbody = GetComponent<Rigidbody2D>();
 		rigidbody.gravityScale = 0;
-
-		pilot.GetComponentInChildren<Cockpit>();
 
 		modules = new ArrayList();
 
