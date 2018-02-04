@@ -43,7 +43,6 @@ public class ModuleManager : MonoBehaviour {
         if (modules.Count < 6)
         {
             modules.Add(mod);
-
 			mod.transform.parent = transform;
 
 			switch (modules.Count) {

@@ -28,8 +28,6 @@ public class Module : MonoBehaviour {
 	public void TakeDamage(float amount) {
         health -= amount;
 
-		Debug.Log("hit");
-
 		if(health <= 0) {
 			Die();
 		}
@@ -40,12 +38,15 @@ public class Module : MonoBehaviour {
 	}
 
 	public void AttachToShip(Module mod) {
-		player.addModule(mod);
-		mod.player = this.player;
+		if(mod != null) {
+			player.addModule(mod);
+			mod.player = this.player;
+		}
 	}
 
 	protected void Die() {
-		player.destroyModule(this);
+		if(this != null) 
+			player.destroyModule(this);
 	}
 
 	void OnTriggerEnter2D (Collider2D col) {
