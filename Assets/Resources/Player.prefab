@@ -98,7 +98,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1036399554723286}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -14.537173, y: 7.3780055, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4434141141126282}
@@ -182,6 +182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseVelocity: 5
   velocity: 0
+  angularVelocity: 160
   playerCamera: {fileID: 20066848377901688}
 --- !u!114 &114390465447194370
 MonoBehaviour:
@@ -284,8 +285,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 114390465447194370}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
+  viewIdField: 1
+  instantiationId: 1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!124 &124129980189855424

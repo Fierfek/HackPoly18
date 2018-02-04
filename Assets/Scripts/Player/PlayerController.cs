@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-	public float baseVelocity = 5, velocity, angularVelocity;
+	public float baseVelocity = 5, velocity = 0, angularVelocity = 160;
 	public Camera playerCamera;
 
 	ArrayList modules;
