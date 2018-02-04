@@ -21,12 +21,5 @@ public class Ballistics : Weapons {
     void Update()
     {
 
-        if (health <= 0)
-        {
-            //Destroy Module and create empty space
-        }
-
     }
-
-
 }

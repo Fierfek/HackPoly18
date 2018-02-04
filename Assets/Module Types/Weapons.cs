@@ -4,13 +4,9 @@ using UnityEngine;
 
 public class Weapons : Module {
 
-    public GameObject weaponPrefab;
-
-    void Fire()
+    public virtual void Fire()
     {
         //Instantiate(projectile, transform.position);
         //Blam Blam with BoomType
-       
-
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Module : MonoBehaviour {
 
-	public PolygonCollider2D modSpot;
+	private PolygonCollider2D collider;
 	protected float health;
 	PlayerController player;
 
